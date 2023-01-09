@@ -1,0 +1,23 @@
+version: '3.0'
+services:
+    mongodb:
+        image: mongo:5.0
+        ports:
+            - 27017:27017
+        volumes:
+            - ~/apps/mongo:/data/db
+    localstack:
+        image: localstack/localstack
+        environment:
+            - SERVICES=apigateway,cloudformation,cloudwatch,lambda,s3,secretsmanager,sns,sqs,stepfunctions,sts
+            - DEBUG=1
+            - AWS_DEFAULT_REGION=us-east-1
+            - EDGE_PORT=4566
+            - LAMBDA_EXECUTOR=docker-reuse
+            - DOCKER_HOST=unix:///var/run/docker.sock
+            - LOCALSTACK_API_KEY=*******
+        ports:
+            - '4566-4597:4566-4597'
+        volumes:
+            - '${LOCALSTACK_TMPDIR:-/tmp/test-localstack}:/var/lib/localstack'
+            - '/var/run/docker.sock:/var/run/docker.sock'

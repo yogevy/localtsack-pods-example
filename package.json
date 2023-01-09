@@ -1,0 +1,16 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "localstack": "docker-compose --project-directory localstack up -d",
+    "serverless": "serverless deploy --stage=local"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "serverless": "^3.26.0",
+    "serverless-localstack": "^1.0.1"
+  }
+}

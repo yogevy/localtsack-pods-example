@@ -1,0 +1,20 @@
+service: test-service
+
+plugins:
+  - serverless-localstack
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+
+custom:
+  localstack:
+    host: http://localhost
+    debug: true
+    edgePort: 4566
+    stages:
+      - local
+
+functions:
+  api:
+    handler: index.handler
