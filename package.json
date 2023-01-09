@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "localstack": "docker-compose --project-directory localstack up -d",
+    "remove-localstack": "cd localstack && docker-compose stop && docker-compose rm",
     "serverless": "serverless deploy --stage=local"
   },
   "author": "",
