@@ -1,11 +1,5 @@
 version: '3.0'
 services:
-    mongodb:
-        image: mongo:5.0
-        ports:
-            - 27017:27017
-        volumes:
-            - ~/apps/mongo:/data/db
     localstack:
         image: localstack/localstack
         environment:
@@ -15,7 +9,7 @@ services:
             - EDGE_PORT=4566
             - LAMBDA_EXECUTOR=docker-reuse
             - DOCKER_HOST=unix:///var/run/docker.sock
-            - LOCALSTACK_API_KEY=*******
+            - LOCALSTACK_API_KEY=3y58QnV6fL
         ports:
             - '4566-4597:4566-4597'
         volumes:
