@@ -9,7 +9,7 @@ services:
             - EDGE_PORT=4566
             - LAMBDA_EXECUTOR=docker-reuse
             - DOCKER_HOST=unix:///var/run/docker.sock
-            - LOCALSTACK_API_KEY=3y58QnV6fL
+            - LOCALSTACK_API_KEY=xxxxxxx
         ports:
             - '4566-4597:4566-4597'
         volumes:
